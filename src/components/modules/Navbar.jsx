@@ -22,8 +22,11 @@ import {
 } from "./Icons.jsx";
 import { SlBasket } from "react-icons/sl";
 import { Badge } from "@nextui-org/react";
+import { useCart } from "../../context/CartContext.jsx";
 
 export default function Nav() {
+  const [state, dispatch] = useCart();
+
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
     scale: <Scale className="text-warning" fill="currentColor" size={30} />,
@@ -37,7 +40,7 @@ export default function Nav() {
   };
 
   return (
-    <Navbar className=" bg-blue-100 rounded-full">
+    <Navbar className=" bg-orange-200 rounded-full">
       <NavbarBrand className="">
         <p className="font-bold text-inherit">PooStore</p>
       </NavbarBrand>
@@ -53,64 +56,42 @@ export default function Nav() {
                 radius="lg"
                 variant="light"
               >
-                Features
+                Categories
               </Button>
             </DropdownTrigger>
           </NavbarItem>
 
           <DropdownMenu
             aria-label="ACME features"
-            className="w-[300px]"
+            className="w-[200px]"
             itemClasses={{
               base: "gap-4",
             }}
           >
-            <DropdownItem
-              key="autoscaling"
-              description="ACME scales apps to meet user demand, automagically, based on load."
-              startContent={icons.scale}
-              href="/"
-            >
-              Autoscaling
+            <DropdownItem key="All" startContent={icons.scale} href="/">
+              All
             </DropdownItem>
-            <DropdownItem
-              key="usage_metrics"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
-              startContent={icons.activity}
-            >
-              Usage Metrics
+            <DropdownItem key="Electronics" startContent={icons.activity}>
+              Electronics
             </DropdownItem>
-            <DropdownItem
-              key="production_ready"
-              description="ACME runs on ACME, join us and others serving requests at web scale."
-              startContent={icons.flash}
-            >
-              Production Ready
+            <DropdownItem key="Jewelery" startContent={icons.flash}>
+              Jewelery
             </DropdownItem>
-            <DropdownItem
-              key="99_uptime"
-              description="Applications stay on the grid with high availability and high uptime guarantees."
-              startContent={icons.server}
-            >
-              +99% Uptime
+            <DropdownItem key="Men's Clothing" startContent={icons.server}>
+              Men's Clothing
             </DropdownItem>
-            <DropdownItem
-              key="supreme_support"
-              description="Overcome any challenge with a supporting team ready to respond."
-              startContent={icons.user}
-            >
-              +Supreme Support
+            <DropdownItem key="Women's Clothing" startContent={icons.user}>
+              Women's Clothing
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>
       <Badge
-        className="-m-[5px]  "
-        content="3"
+        className="-m-[5px] bg-orange-600 text-white text-xs"
+        content={state.itemsCounter}
         variant="shadow"
         size="sm"
         showOutline="false"
-        color="primary"
         placement="top-right"
       >
         <NavbarItem className="">
