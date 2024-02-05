@@ -40,7 +40,7 @@ export default function Nav() {
   };
 
   return (
-    <Navbar className=" bg-orange-200 rounded-full">
+    <Navbar className="bg-orange-200 rounded-b-md h-10 md:h-14">
       <NavbarBrand className="">
         <p className="font-bold text-inherit">PooStore</p>
       </NavbarBrand>
@@ -86,24 +86,33 @@ export default function Nav() {
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>
-      <Badge
-        className="-m-[5px] bg-orange-600 text-white text-xs"
-        content={state.itemsCounter}
-        variant="shadow"
-        size="sm"
-        showOutline="false"
-        placement="top-right"
-      >
-        <NavbarItem className="">
-          <SlBasket className="text-xl" />
-        </NavbarItem>
-      </Badge>
+      <Link href="/checkouts">
+        <Badge
+          className="-m-[5px] bg-orange-600 text-white text-xs "
+          content={!!state.itemsCounter && state.itemsCounter}
+          variant="shadow"
+          size="sm"
+          showOutline="false"
+          placement="top-right"
+        >
+          <NavbarItem className="">
+            <SlBasket className="text-xl" />
+          </NavbarItem>
+        </Badge>
+      </Link>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+        <NavbarItem className="hidden lg:flex ">
+          <Link className="text-orange-600" href="#">
+            Login
+          </Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <Button
+            as={Link}
+            className="bg-orange-300 h-7"
+            href="#"
+            variant="flat"
+          >
             Sign Up
           </Button>
         </NavbarItem>

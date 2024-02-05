@@ -20,7 +20,7 @@ function SideBar({ query, setQuery }) {
   };
 
   return (
-    <div className="absolute right-0">
+    <div className="">
       <div className="">
         <FaListUl />
         <p className="">Categories</p>

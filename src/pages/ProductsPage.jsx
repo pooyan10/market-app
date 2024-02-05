@@ -11,6 +11,8 @@ import {
 import { useSearchParams } from "react-router-dom";
 import SearchBox from "../components/modules/SearchBox";
 import SideBar from "./SideBar";
+import Lottie from "lottie-react";
+import shop from "../animation/shop.json";
 
 function ProductsPage() {
   const products = useProducts();
@@ -36,15 +38,19 @@ function ProductsPage() {
 
   return (
     <>
-      <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
+      <div className="flex">
+        <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
+        {!!displayed.length && <SideBar query={query} setQuery={setQuery} />}
+      </div>
 
       {!displayed.length && <Loader />}
+
       <div className=" flex flex-col items-center sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <Lottie className="h-[70vh]" animationData={shop} loop={true} />
         {displayed.map((item) => (
           <Card key={item.id} data={item} />
         ))}
       </div>
-      {!!displayed.length && <SideBar query={query} setQuery={setQuery} />}
     </>
   );
 }

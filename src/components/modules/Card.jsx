@@ -8,17 +8,15 @@ import { MdDeleteOutline } from "react-icons/md";
 function Card({ data }) {
   const { id, title, image, price } = data;
   const [state, dispatch] = useCart();
-  console.log(state);
 
   const quantity = productQuantity(state, id);
-  console.log(quantity);
 
   const clickHandler = (type) => {
     dispatch({ type, payload: data });
   };
 
   return (
-    <div className="m-4 h-50 mx-auto bg-white rounded-xl w-screen sm:w-[270px] border-dotted border-2 p-1 flex flex-col items-start justify-end">
+    <div className="m-4  h-50 mx-auto bg-white rounded-xl w-screen sm:w-[270px] border-dotted border-2 p-1 flex flex-col items-start justify-end">
       <div className="grid grid-cols-2 w-full sm:flex flex-col ">
         <div className="col-span-1 sm:inline">
           <img
