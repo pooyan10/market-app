@@ -40,7 +40,11 @@ function ProductsPage() {
     <>
       <div className="flex">
         <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
-        {!!displayed.length && <SideBar query={query} setQuery={setQuery} />}
+        {!!displayed.length && (
+          <div className="flex items-center mt-4 ml-5">
+            <SideBar query={query} setQuery={setQuery} />
+          </div>
+        )}
       </div>
 
       {!displayed.length && <Loader />}

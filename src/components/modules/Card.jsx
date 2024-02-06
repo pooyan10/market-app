@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import { TbListDetails, TbShoppingBagCheck } from "react-icons/tb";
 import { productQuantity, shortenText } from "../../helper/helper";
@@ -82,4 +82,4 @@ function Card({ data }) {
   );
 }
 
-export default Card;
+export default memo(Card);

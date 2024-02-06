@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { Badge, Navbar, NavbarBrand } from "@nextui-org/react";
 import { SlBasket } from "react-icons/sl";
+import toast, { Toaster } from "react-hot-toast";
 
 function Layout({ children }) {
   const [state] = useCart();
+
+  useEffect(() => {
+    state.checkout && toast.success("خرید شما با موفقیت انجام شد");
+  }, [state.checkout]);
   console.log(state);
   return (
     <>
@@ -31,6 +36,7 @@ function Layout({ children }) {
           </Link>
         </Navbar>
       </header>
+      <Toaster />
       {children}
     </>
   );
