@@ -15,7 +15,7 @@ function Layout({ children }) {
   return (
     <>
       {/* <Nav /> */}
-      <header>
+      <header className="sticky top-0 left-0 right-0 z-20">
         <Navbar className="bg-orange-200  rounded-b-md h-14 md:h-14">
           <NavbarBrand className="">
             <Link to="/">

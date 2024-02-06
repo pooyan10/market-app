@@ -1,14 +1,16 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useProductDetails } from "../context/productsContext";
 import Loader from "../components/modules/Loader";
 import { SiOpenproject } from "react-icons/si";
 import { FaArrowLeft } from "react-icons/fa";
 import { IoMdPricetag } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 function DetailsPage() {
   const { id } = useParams();
   const productDetails = useProductDetails(+id);
+  const navigate = useNavigate();
 
   if (!productDetails) return <Loader />;
 
@@ -36,12 +38,13 @@ function DetailsPage() {
             <IoMdPricetag className="text-orange-600" />
             {productDetails.price} $
           </span>
-          <Link
+          <button
+            onClick={() => navigate(-1)}
             to="/products"
             className="flex items-center rounded-xl bg-orange-600 px-2 text-sm gap-2 text-white"
           >
             <FaArrowLeft /> Back To Shop
-          </Link>
+          </button>
         </div>
       </div>
     </div>

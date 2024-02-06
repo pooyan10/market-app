@@ -38,7 +38,7 @@ function ProductsPage() {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex mt-6 -mb-2">
         <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
         {!!displayed.length && (
           <div className="flex items-center mt-4 ml-5">
