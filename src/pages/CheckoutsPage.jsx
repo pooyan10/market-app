@@ -24,7 +24,7 @@ function CheckoutsPage() {
         <button
           onClick={() => navigate(-1)}
           to="/products"
-          className="flex items-center rounded-xl bg-orange-600 px-2 text-sm gap-2 text-white hover:scale-105 transition-all duration-75 hover:px-4 hover:py-2 hover:animate-pulse"
+          className="flex items-center rounded-xl bg-orange-600 px-2 text-sm gap-2 text-white hover:scale-105 transition-all duration-75 hover:px-4 hover:py-2  "
         >
           <FaArrowLeft className="" /> Back To Shop
         </button>

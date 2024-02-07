@@ -9,7 +9,7 @@ function Layout({ children }) {
   const [state] = useCart();
 
   useEffect(() => {
-    state.checkout && toast.success("خرید شما با موفقیت انجام شد");
+    state.checkout && toast.success("successful purchase");
   }, [state.checkout]);
   console.log(state);
   return (

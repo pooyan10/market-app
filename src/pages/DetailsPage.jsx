@@ -33,7 +33,7 @@ function DetailsPage() {
           {productDetails.category}
         </p>
 
-        <div className="flex justify-between items-end">
+        <div className="flex justify-between items-end h-8 mt-2">
           <span className="flex items-center gap-2 mt-2">
             <IoMdPricetag className="text-orange-600" />
             {productDetails.price} $
@@ -41,7 +41,7 @@ function DetailsPage() {
           <button
             onClick={() => navigate(-1)}
             to="/products"
-            className="flex items-center rounded-xl bg-orange-600 px-2 text-sm gap-2 text-white"
+            className="flex items-center rounded-xl bg-orange-600 px-2 text-sm gap-2 text-white hover:scale-105 transition-all duration-75 hover:px-4 hover:py-2 mr-6"
           >
             <FaArrowLeft /> Back To Shop
           </button>
