@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import { TbListDetails, TbShoppingBagCheck } from "react-icons/tb";
 import { productQuantity, shortenText } from "../../helper/helper";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../context/cartContext";
 import { MdDeleteOutline } from "react-icons/md";
 
 function Card({ data }) {

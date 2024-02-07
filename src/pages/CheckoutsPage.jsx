@@ -1,5 +1,5 @@
 import React from "react";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/cartContext";
 import BasketCart from "../components/modules/BasketCart";
 import BasketSidebar from "../components/modules/BasketSidebar";
 
@@ -20,7 +20,7 @@ function CheckoutsPage() {
   }
 
   return (
-    <div className="flex flex-col-reverse">
+    <div className="flex flex-col-reverse ">
       <BasketSidebar data={state} />
       {state.selectedItems.map((item) => (
         <BasketCart key={item.id} clickHandler={clickHandler} data={item} />

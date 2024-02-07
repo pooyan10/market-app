@@ -4,7 +4,7 @@ import ProductsPage from "./pages/ProductsPage";
 import DetailsPage from "./pages/DetailsPage";
 import CheckoutsPage from "./pages/CheckoutsPage";
 import PageNotFound from "./pages/404";
-import { CartProvider } from "./context/CartContext";
+import { CartProvider } from "./context/cartContext";
 import Layout from "./layout/Layout";
 
 function App() {

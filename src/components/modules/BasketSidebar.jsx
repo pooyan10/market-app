@@ -2,7 +2,7 @@ import React from "react";
 import { TbChecklist } from "react-icons/tb";
 import { BsPatchCheck } from "react-icons/bs";
 import { FaHashtag } from "react-icons/fa";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../context/cartContext";
 import { useNavigate } from "react-router-dom";
 
 function BasketSidebar({ data }) {

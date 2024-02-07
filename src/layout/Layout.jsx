@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/cartContext";
 import { Badge, Navbar, NavbarBrand } from "@nextui-org/react";
 import { SlBasket } from "react-icons/sl";
 import toast, { Toaster } from "react-hot-toast";
